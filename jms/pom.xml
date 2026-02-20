@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>tp.archi</groupId>
+    <artifactId>tp-archi-si</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>jms</artifactId>
+  <name>TP Architecture SI – Module JMS</name>
+
+  <dependencies>
+    <!-- JMS 1.1 + transport ActiveMQ Classic -->
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-client</artifactId>
+    </dependency>
+    <!-- Implémentation SLF4J requise par activemq-client -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!--
+        exec-maven-plugin : exécute une classe Main directement depuis Maven.
+
+        Commande générique :
+          mvn exec:java -Dexec.mainClass=tp.jms.QueueProducer
+
+        Raccourcis par classe (dans le répertoire jms/) :
+          mvn exec:java -Dexec.mainClass=tp.jms.QueueProducer
+          mvn exec:java -Dexec.mainClass=tp.jms.QueueConsumer
+          mvn exec:java -Dexec.mainClass=tp.jms.TopicPublisher
+          mvn exec:java -Dexec.mainClass=tp.jms.TopicSubscriber
+      -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <!--
+            exec.mainClass est lu depuis -Dexec.mainClass=...
+            Exemple : mvn exec:java -Dexec.mainClass=tp.jms.QueueConsumer
+          -->
+          <mainClass>${exec.mainClass}</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

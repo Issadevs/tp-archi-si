@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agenda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="agenda.xsd">
+
+  <cours>
+    <titre>Architecture des Systèmes d'Information</titre>
+    <date>2026-02-19</date>
+    <horaire debut="09:00" fin="12:00"/>
+    <salle>A101</salle>
+    <enseignant>Prof. Dupont</enseignant>
+  </cours>
+
+  <cours>
+    <titre>Middleware et JMS – ActiveMQ Classic</titre>
+    <date>2026-02-26</date>
+    <horaire debut="13:30" fin="16:30"/>
+    <salle>B205</salle>
+    <enseignant>Prof. Martin</enseignant>
+  </cours>
+
+  <cours>
+    <titre>Services Web REST et SOAP</titre>
+    <date>2026-03-05</date>
+    <horaire debut="08:00" fin="11:00"/>
+    <salle>C310</salle>
+    <enseignant>Prof. Leblanc</enseignant>
+  </cours>
+
+</agenda>

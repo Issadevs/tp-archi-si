@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <!-- Élément racine -->
+  <xs:element name="bank">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="accounts"     type="AccountsType"/>
+        <xs:element name="transactions" type="TransactionsType" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ─── Comptes ─────────────────────────────────────────────────── -->
+
+  <xs:complexType name="AccountsType">
+    <xs:sequence>
+      <xs:element name="account" type="AccountType"
+                  minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AccountType">
+    <xs:sequence>
+      <xs:element name="owner"    type="xs:string"/>
+      <xs:element name="balance"  type="xs:decimal"/>
+      <xs:element name="currency" type="CurrencyCode"/>
+    </xs:sequence>
+    <xs:attribute name="id"   type="xs:string"       use="required"/>
+    <xs:attribute name="type" type="AccountTypeEnum"  use="required"/>
+  </xs:complexType>
+
+  <xs:simpleType name="AccountTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="checking"/>
+      <xs:enumeration value="savings"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Code devise ISO 4217 : 3 lettres majuscules -->
+  <xs:simpleType name="CurrencyCode">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ─── Transactions ─────────────────────────────────────────────── -->
+
+  <xs:complexType name="TransactionsType">
+    <xs:sequence>
+      <xs:element name="transaction" type="TransactionType"
+                  minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TransactionType">
+    <xs:sequence>
+      <xs:element name="from"   type="xs:string"/>
+      <xs:element name="to"     type="xs:string"/>
+      <xs:element name="amount" type="xs:decimal"/>
+      <xs:element name="date"   type="xs:dateTime"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+  </xs:complexType>
+
+</xs:schema>

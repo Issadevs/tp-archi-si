@@ -1,0 +1,18 @@
+# Maven
+target/
+*.class
+
+# IDE
+.idea/
+*.iml
+.eclipse/
+.settings/
+.project
+.classpath
+
+# Logs
+*.log
+/tmp/
+
+# Claude Code session data
+.claude/

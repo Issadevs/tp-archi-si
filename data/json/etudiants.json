@@ -1,0 +1,40 @@
+{
+  "etudiants": [
+    {
+      "id": "E001",
+      "nom": "Dupont",
+      "prenom": "Alice",
+      "email": "alice.dupont@etudiant.fr",
+      "promotion": "M1 INFO",
+      "notes": [
+        { "matiere": "Architecture SI", "note": 15.5 },
+        { "matiere": "Middleware JMS",  "note": 14.0 },
+        { "matiere": "Services Web",    "note": 16.0 }
+      ]
+    },
+    {
+      "id": "E002",
+      "nom": "Martin",
+      "prenom": "Bob",
+      "email": "bob.martin@etudiant.fr",
+      "promotion": "M1 INFO",
+      "notes": [
+        { "matiere": "Architecture SI", "note": 12.0 },
+        { "matiere": "Middleware JMS",  "note": 16.5 },
+        { "matiere": "Services Web",    "note": 13.5 }
+      ]
+    },
+    {
+      "id": "E003",
+      "nom": "Bernard",
+      "prenom": "Clara",
+      "email": "clara.bernard@etudiant.fr",
+      "promotion": "M1 INFO",
+      "notes": [
+        { "matiere": "Architecture SI", "note": 18.0 },
+        { "matiere": "Middleware JMS",  "note": 17.5 },
+        { "matiere": "Services Web",    "note": 19.0 }
+      ]
+    }
+  ]
+}
